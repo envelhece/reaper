@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>REAPER</title>
+<script>try{if(localStorage.getItem('reaper_lang'))document.documentElement.classList.add('hasl')}catch(e){}</script>
+<meta name="description" content="Otimizador de PC para Windows: limpeza de lixo e cache, modo jogo, inicialização e rede. Analise antes de limpar.">
+<link rel="icon" href="data:image/jpeg;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#060606;--fg:#efeeec;--mut:#8b8a88;--dim:#4a4a49;--line:#222;--red:#ff3030;--d:'Bricolage Grotesque',system-ui,sans-serif;--b:'Instrument Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--fg);font:400 18px/1.65 var(--b);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;background:none;border:0}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:20;display:flex;align-items:center;gap:2px;padding:7px 7px 7px 18px;border:1px solid #2a2a2a;border-radius:99px;background:rgba(10,10,10,.72);backdrop-filter:blur(14px);font-size:16px;color:var(--mut)}
+nav img{width:26px;height:26px;border-radius:4px;margin-right:8px}
+nav a{padding:9px 18px;border-radius:99px;transition:color .2s}
+nav a:hover{color:var(--fg)}
+nav .dl{background:var(--fg);color:#060606;font-weight:500}
+nav .dl:hover{color:#060606;background:#fff}
+.hero{min-height:100svh;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;gap:20px;max-width:1400px;margin:0 auto;padding:130px 40px 60px}
+h1{font:600 clamp(48px,7.4vw,112px)/1 var(--d);letter-spacing:-.035em;margin-bottom:22px}
+.sub{color:var(--mut);max-width:540px;font-size:22px;margin-bottom:40px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:17px 34px;border-radius:99px;border:1px solid #333;font-weight:500;font-size:18px;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px);border-color:#666}
+.btn.w{background:var(--fg);color:#060606;border-color:var(--fg)}
+.btn.w:hover{background:#fff}
+.stage{position:relative;width:100%;aspect-ratio:1}
+#cv{width:100%;height:100%;display:block}
+.hint{position:absolute;bottom:2%;left:0;right:0;text-align:center;font-size:12px;color:var(--dim);transition:opacity .6s}
+.strip{border-block:1px solid var(--line);padding:24px 28px;display:flex;justify-content:center;gap:clamp(18px,5vw,72px);flex-wrap:wrap;color:var(--mut);font-size:17px}
+section{max-width:1400px;margin:0 auto;padding:0 40px}
+.plans{position:relative;padding-top:150px;padding-bottom:80px;overflow:hidden}
+.big{position:absolute;top:70px;left:0;right:0;text-align:center;font:600 clamp(100px,24vw,380px)/1 var(--d);letter-spacing:-.05em;white-space:nowrap;pointer-events:none;will-change:transform}
+.big span{display:inline-block;transform:translateY(60%);opacity:0;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .9s}
+.big.on span{transform:none;opacity:1}
+.grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:clamp(90px,18vw,250px)}
+.card{--mx:50%;--my:0%;position:relative;border:1px solid #2a2a2a;border-radius:26px;padding:40px 36px;background:radial-gradient(260px circle at var(--mx) var(--my),rgba(255,255,255,.09),transparent 70%),rgba(14,14,14,.78);backdrop-filter:blur(16px);display:flex;flex-direction:column;transition:border-color .3s}
+.card:hover{border-color:#4a4a4a}
+.card.f{border-color:#5a5a5a}
+.card h3{font:500 18px var(--b);color:var(--mut);margin-bottom:12px}
+.price{font:600 60px/1 var(--d);letter-spacing:-.03em;margin-bottom:26px}
+.price small{font:400 20px var(--b);color:var(--mut);letter-spacing:0}
+.card ul{list-style:none;padding:0;flex:1;margin-bottom:26px}
+.card li{display:flex;gap:10px;color:#a5a4a2;font-size:18px;margin-bottom:15px;line-height:1.45}
+.card li:before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--fg);margin-top:10px}
+.card .btn{text-align:center}
+.pay{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:54px;color:var(--mut);font-size:18px}
+.pay b{font-weight:500;color:var(--fg)}
+.faq{padding-top:90px;padding-bottom:70px;max-width:960px}
+.faq h2{font:600 clamp(36px,5vw,58px) var(--d);letter-spacing:-.03em;margin-bottom:26px}
+details{border-top:1px solid var(--line);padding:18px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:500;font-size:21px;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";color:var(--mut);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mut);margin-top:12px;max-width:760px;font-size:18px}
+footer{border-top:1px solid var(--line);padding:36px 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;max-width:1400px;margin:0 auto;font-size:16px;color:var(--dim)}
+footer button{color:var(--mut)}footer button:hover{color:var(--fg)}
+dialog{margin:auto;width:min(900px,94vw);max-height:90vh;padding:0;border:1px solid #2e2e2e;border-radius:20px;background:#0c0c0c;color:var(--fg);overflow:hidden}
+dialog::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(6px)}
+dialog[open]{animation:pop .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes pop{from{opacity:0;transform:scale(.96) translateY(10px)}}
+.tabs{display:flex;gap:4px;padding:18px 24px 0;border-bottom:1px solid var(--line)}
+.tabs button{padding:14px 22px;color:var(--mut);font-size:17px;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected=true]{color:var(--fg);border-color:var(--fg)}
+.tabs .x{margin-left:auto;font-size:22px;padding:4px 12px}
+.doc{padding:36px 44px 44px;overflow:auto;max-height:calc(90vh - 70px);font-size:18px;line-height:1.7;color:#b4b3b1;scrollbar-width:thin;scrollbar-color:#333 transparent}
+.doc h4{color:var(--fg);font:600 21px var(--d);margin:30px 0 8px}
+.doc h4:first-child{margin-top:0}
+.doc p{margin-bottom:10px;max-width:68ch}
+.doc[hidden]{display:none}
+#pay{width:min(520px,94vw);padding:38px}
+#pay h3{font:600 32px var(--d);margin-bottom:4px}
+#pay p{color:var(--mut);font-size:17px;margin-bottom:20px}
+#pay .btn{display:block;text-align:center;margin-bottom:10px}
+#pay .note{font-size:12px;color:var(--dim);margin:6px 0 0}
+.sec{padding-top:150px}
+.sec h2{font:600 clamp(38px,5.4vw,70px)/1.04 var(--d);letter-spacing:-.035em;margin-bottom:20px}
+.lead{color:var(--mut);font-size:21px;max-width:560px;margin-bottom:44px}
+.win{--ac:#ff2828;border:1px solid #2a2a2a;border-radius:20px;background:#0c0c0c;overflow:hidden;max-width:980px}
+.wbar{display:flex;gap:7px;align-items:center;padding:14px 18px;border-bottom:1px solid #1c1c1c;color:var(--dim);font-size:14px}
+.wbar i{width:11px;height:11px;border-radius:50%;background:#2a2a2a}.wbar span{margin-left:12px;letter-spacing:.12em}
+.wbody{display:grid;grid-template-columns:170px minmax(0,1fr)}
+.side{border-right:1px solid #1c1c1c;padding:18px 12px;display:flex;flex-direction:column;gap:4px;font-size:16px;color:var(--mut)}
+.side span{padding:10px 14px;border-radius:10px}.side .on{background:#171717;color:var(--fg);box-shadow:inset 3px 0 var(--ac)}
+.main{padding:26px 30px}
+.stats{display:flex;gap:clamp(20px,5vw,60px);margin-bottom:22px}
+.stats b{display:block;font:600 44px/1 var(--d);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.stats small{color:var(--mut);font-size:15px}
+.bar{height:6px;border-radius:9px;background:#1a1a1a;margin-bottom:20px;overflow:hidden}
+.bar div{height:100%;width:0;background:var(--ac);transition:width .15s linear,background .4s}
+#log{font:15px/1.7 ui-monospace,Consolas,monospace;color:#c9c8c6;height:210px;overflow:hidden;white-space:pre-wrap;margin:0}
+#log .ok{color:var(--ac)}#log .w{color:var(--mut)}
+.sw{display:flex;gap:12px;align-items:center;margin-top:26px;color:var(--mut);font-size:16px;flex-wrap:wrap}
+.sw button{width:30px;height:30px;border-radius:50%;border:2px solid transparent;outline:1px solid #333;outline-offset:2px;transition:transform .2s}
+.sw button:hover{transform:scale(1.15)}.sw button[aria-pressed=true]{border-color:#060606;outline:2px solid var(--fg)}
+.feat{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.7fr);gap:70px}
+.feat .l{position:sticky;top:120px;align-self:start}
+.fr{display:grid;grid-template-columns:200px minmax(0,1fr);gap:24px;padding:26px 0;border-top:1px solid var(--line);transition:background .3s}
+.fr:last-child{border-bottom:1px solid var(--line)}
+.fr h3{font:600 23px var(--d);letter-spacing:-.02em}
+.fr p{color:var(--mut);font-size:18px}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:34px;counter-reset:s;position:relative;margin-top:50px}
+.steps:before{content:"";position:absolute;top:0;left:0;height:2px;width:0;background:var(--fg);transition:width 1.6s cubic-bezier(.3,.7,.2,1)}
+.steps.on:before{width:100%}
+.steps div{counter-increment:s;border-top:2px solid #1f1f1f;padding-top:26px}
+.steps div:before{content:counter(s);display:block;font:600 54px/1 var(--d);color:#2c2c2c;margin-bottom:18px}
+.steps h3{font:600 23px var(--d);margin-bottom:8px;letter-spacing:-.02em}
+.steps p{color:var(--mut);font-size:17px}
+.cta{padding-bottom:140px;text-align:center}
+.cta .lead{margin-inline:auto}.cta .row{justify-content:center}
+.tt{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tt button{position:relative;padding:13px 24px;border:1px solid #2a2a2a;border-radius:99px;color:var(--mut);font-size:17px;overflow:hidden;transition:color .2s,border-color .2s}
+.tt button:hover{color:var(--fg)}.tt button[aria-selected=true]{color:var(--fg);border-color:#555}
+.tt u{position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--fg)}
+.tt button[aria-selected=true] u{animation:fill 6.5s linear forwards}
+.tt:hover u{animation-play-state:paused}
+@keyframes fill{to{width:100%}}
+#tdesc{min-height:64px;max-width:640px}
+.m-h{font:600 26px var(--d);margin-bottom:4px;letter-spacing:-.02em}.m-s{color:var(--mut);font-size:16px;margin-bottom:20px}
+.m-r{display:flex;align-items:center;gap:14px;padding:13px 16px;border:1px solid #1c1c1c;border-radius:12px;margin-bottom:9px;font-size:17px}
+.m-r small{margin-left:auto;color:var(--mut);font-size:15px}
+.ck{width:19px;height:19px;border-radius:6px;border:1.5px solid #444;flex:none}.ck.on{background:var(--ac);border-color:var(--ac)}
+.chip{display:inline-block;padding:9px 16px;border:1px solid #2a2a2a;border-radius:99px;font-size:16px;color:var(--mut);margin:0 8px 8px 0}.chip.on{border-color:var(--ac);color:var(--fg)}
+.m-b{display:inline-block;margin-top:16px;padding:12px 26px;border-radius:99px;background:var(--fg);color:#060606;font-weight:500;font-size:16px}
+.m-t{border:1px solid #2a2a2a;border-radius:14px;padding:16px 18px;font-size:17px;line-height:1.5;margin-bottom:8px}
+.sg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:46px}
+.sg div{border-top:1px solid #333;padding-top:24px}
+.sg h3{font:600 24px var(--d);letter-spacing:-.02em;margin-bottom:10px}.sg p{color:var(--mut);font-size:18px}
+.tbl{margin-top:70px;overflow-x:auto}.tbl table{width:100%;border-collapse:collapse;font-size:18px;min-width:600px}
+.tbl th,.tbl td{padding:18px 14px;text-align:left;border-top:1px solid var(--line)}
+.tbl th{font-weight:500;color:var(--mut)}.tbl td{color:var(--mut)}.tbl td:first-child,.tbl td.y{color:var(--fg)}
+.wbar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.wbar b{color:var(--ac);font-size:13px;letter-spacing:.22em;font-weight:600}
+.wbar span{margin:0;letter-spacing:0}.wbar .dots{justify-self:end;display:flex;gap:7px}
+.wbar .dots i:nth-child(1){background:#ffbd2e}.wbar .dots i:nth-child(2){background:#27c93f}.wbar .dots i:nth-child(3){background:#ff5f57}
+.side{padding:20px 12px 18px}.side .logo{width:92px;height:92px;margin:4px auto 22px;background:var(--ac);transition:background .4s}
+.side .logo img{width:100%;height:100%;display:block;mix-blend-mode:multiply}
+.side .sp{flex:1}
+.run{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:430px;padding:26px 40px}
+.run>*{width:min(520px,100%)}
+#c1{display:block;text-align:center;font:600 84px/1 var(--d);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.run small{text-align:center;display:block;color:var(--mut);font-size:16px;margin:6px 0 22px}
+.run .bar{margin-bottom:14px}
+.rl{text-align:center;color:var(--mut);font-size:15px;margin-bottom:34px;font-variant-numeric:tabular-nums}
+.stop{display:block;text-align:center;border:1px solid #232323;border-radius:12px;padding:13px;background:#0f0f0f;font-size:17px}
+.det{color:var(--mut);font-size:15px;margin:14px 0 6px}
+.run #log{height:120px}
+.mm{padding:28px 36px;display:flex;flex-direction:column;min-height:440px;min-width:0}
+.hd{display:flex;align-items:center;gap:10px;margin-bottom:14px}.hd .m-h{margin:0 auto 0 0}
+.sb{border:1px solid #232323;border-radius:10px;padding:9px 16px;color:var(--dim);font-size:15px;min-width:170px}.sb.s{min-width:0;padding:9px 14px;color:var(--mut)}
+.lst div{padding:12px 16px;border-radius:10px;font-size:17px;color:#d8d7d5}.lst .sl{background:var(--ac);color:#fff;transition:background .4s}
+.ft{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:16px;color:var(--mut);font-size:15px}
+.sel{border:1px solid #232323;border-radius:12px;padding:13px 16px;margin-bottom:10px;font-size:17px;background:#0f0f0f}.sel.r{border-color:var(--ac)}
+.dd{border:1px solid #232323;border-radius:12px;background:#0f0f0f;margin:-4px 0 14px;overflow:hidden}.dd div{padding:8px 16px;font-size:15px;color:#c9c8c6}.dd .h{background:#1a1a1a}
+.rb{background:var(--ac);color:#fff;border-radius:12px;padding:14px;text-align:center;font-weight:600;font-size:17px;transition:background .4s}.rb.sm{padding:11px 28px}
+.kv{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #1a1a1a;font-size:17px}.kv span{color:var(--mut)}
+.grow{flex:1}
+html:not(.hasl) body{overflow:hidden}
+#gate{position:fixed;inset:0;z-index:60;background:#060606;display:flex;align-items:center;justify-content:center;transition:opacity .7s,visibility .7s}
+#gate.out{opacity:0;visibility:hidden}
+.hasl #gate{display:none}
+.gi{text-align:center;padding:24px}
+.gi img{width:120px;height:120px;display:block;margin:0 auto 28px;animation:gin 1.2s cubic-bezier(.2,.8,.2,1) both}
+.gt{color:var(--mut);font-size:17px;margin-bottom:30px;animation:gin 1s .25s both}
+.gb{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.gb button{padding:16px 36px;border:1px solid #333;border-radius:99px;font-size:19px;font-weight:500;animation:gin .9s both;transition:background .25s,color .25s,border-color .25s,transform .2s}
+.gb button:nth-child(1){animation-delay:.4s}.gb button:nth-child(2){animation-delay:.5s}.gb button:nth-child(3){animation-delay:.6s}
+.gb button:hover{background:var(--fg);color:#060606;transform:translateY(-3px)}
+.gb button.rec{border-color:#777}
+@keyframes gin{from{opacity:0;transform:translateY(16px)}}
+nav .lg{padding:9px 14px;border-radius:99px;color:var(--mut);font-size:15px;letter-spacing:.06em}nav .lg:hover{color:var(--fg)}
+@media(max-width:820px){.sg{grid-template-columns:1fr;gap:26px}.wbody{grid-template-columns:1fr}.side{display:none}.feat{grid-template-columns:1fr;gap:30px}.feat .l{position:static}.fr{grid-template-columns:1fr;gap:6px}.steps{grid-template-columns:1fr}}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:100px}.stage{max-width:420px;margin:0 auto;order:-1}.grid{grid-template-columns:1fr}nav a.h{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.big span{transform:none;opacity:1}}
+
+.stats.sm{gap:clamp(14px,3vw,34px);margin-bottom:16px}.stats.sm b{font-size:34px}
+.m-r .ck{margin-right:0}
+.chip.on .ck{display:none}
+.card .tag{align-self:flex-start;font-size:14px;padding:6px 13px;border-radius:99px;border:1px solid #333;color:var(--mut);margin-bottom:18px;line-height:1.3}
+.card.f .tag{border-color:var(--fg);color:var(--fg)}
+.card .tag.up{border-style:dashed}
+.card .pd{color:var(--mut);font-size:17px;margin:-14px 0 24px}
+.card .pd s{color:var(--dim);margin-right:6px}
+.card .pd b{color:var(--fg);font-weight:500}
+#pay [hidden]{display:none!important}#pay button.btn{width:100%}
+#pay .qr{background:#fff;border-radius:16px;padding:10px;width:240px;height:240px;margin:0 auto 16px}#pay .qr svg{width:100%;height:100%;display:block}
+.card .old{color:var(--dim);text-decoration:line-through;font-size:22px;margin:-6px 0 2px}
+.launch{position:relative;text-align:center;margin:clamp(90px,18vw,250px) auto -60px;max-width:760px;padding:14px 22px;border:1px solid #ff3030;border-radius:99px;background:rgba(255,48,48,.08);font-size:17px;color:var(--fg)}
+.launch b{color:#ff4a4a}.launch span{color:var(--mut);font-variant-numeric:tabular-nums}
+.launch:not([hidden])+.grid{margin-top:90px}
+.card li b{color:var(--fg);font-weight:500}
+.card li em{display:inline-block;white-space:nowrap;font-style:normal;font-size:11px;line-height:1.5;letter-spacing:.06em;text-transform:uppercase;border:1px solid #555;border-radius:99px;padding:0 7px;margin-left:6px;color:var(--fg);vertical-align:1px}
+.card li.off{color:var(--dim);text-decoration:line-through}.card li.off:before{background:var(--dim)}
+.tbl td:not(:first-child){text-align:center}.tbl th:not(:first-child){text-align:center}
+.card.f{transform:translateY(-10px);box-shadow:0 30px 80px -30px rgba(255,255,255,.12)}
+.trial{text-align:center;margin-top:34px;font-size:17px}.trial a{color:var(--mut);border-bottom:1px solid #333;padding-bottom:2px}.trial a:hover{color:var(--fg)}
+@media(max-width:820px){.card.f{transform:none}}
+</style>
+</head>
+<body>
+<div id="gate" role="dialog" aria-modal="true" aria-label="Language"><div class="gi"><img src="data:image/jpeg;base64,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" alt=""><p class="gt">Escolha o idioma · Choose your language · Выберите язык</p><div class="gb"><button data-l="pt">Português</button><button data-l="en">English</button><button data-l="ru">Русский</button></div></div></div>
+<nav aria-label="Principal"><img src="data:image/jpeg;base64,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" alt=""><a class="h" href="#topo">Início</a><a class="h" href="#funcoes">Funções</a><a href="#planos">Planos</a><a href="#faq">FAQ</a><button class="lg" id="lgb" aria-label="Language" data-nt>PT</button><a class="dl" href="#planos">Baixar</a></nav>
+
+<main id="topo">
+<div class="hero">
+ <div>
+  <h1 id="t" data-nt aria-label="Seu PC mais rápido em um clique.">Seu PC mais rápido em um clique.</h1>
+  <p class="sub">Limpe o lixo, libere memória e deixe os jogos rodando lisos. O REAPER mostra o que vai fazer antes de fazer.</p>
+  <div class="row"><a class="btn w" href="#planos">Ver planos</a><a class="btn" href="#planos" data-free>Testar grátis</a></div>
+ </div>
+ <div class="stage"><canvas id="cv" role="img" aria-label="Logo do REAPER formada por pontos"></canvas><p class="hint" id="hint">passe o mouse sobre a logo</p></div>
+</div>
+
+<div class="strip"><span>Limpeza de lixo e cache</span><span>Modo jogo e plano de energia</span><span>Inicialização mais leve</span><span>Rede e ping</span><span>Português, inglês e russo</span></div>
+
+<section class="sec" id="real">
+ <h2>Veja em ação</h2>
+ <p class="lead">O REAPER limpando, ativando o modo jogo e testando a rede. Imagens ilustrativas.</p>
+ <div class="win"><video id="rv" muted loop playsinline preload="metadata" style="display:block;width:100%;height:auto"></video></div>
+</section>
+
+<section class="sec" id="demo">
+ <h2>Veja ele trabalhando</h2>
+ <p class="lead">Você acompanha quanto espaço está voltando, categoria por categoria, e quantos arquivos em uso foram pulados.</p>
+ <div class="win" id="win" aria-label="Demonstração animada do app">
+  <div class="wbar"><span></span><b>REAPER</b><span class="dots"><i></i><i></i><i></i></span></div>
+  <div class="wbody" id="dw"></div>
+ </div>
+ <div class="sw" id="sw"><span>Cor do tema</span></div>
+</section>
+
+<section class="sec" id="telas">
+ <h2>Cada tela do app</h2>
+ <p class="lead" id="tdesc" data-nt></p>
+ <div class="tt" id="tt" role="tablist"></div>
+ <div class="win" id="tw"><div class="wbar"><span></span><b>REAPER</b><span class="dots"><i></i><i></i><i></i></span></div><div class="wbody" id="tb"></div></div>
+</section>
+
+<section class="sec" id="funcoes">
+ <div class="feat">
+  <div class="l"><h2>O que ele faz</h2><p class="lead" style="margin:0">Tudo roda no seu computador. Nada é enviado para a internet.</p></div>
+  <div>
+   <div class="fr"><h3>Painel</h3><p>CPU, memória e disco em tempo real, com o nome do processador, da placa de vídeo e da versão do Windows.</p></div>
+   <div class="fr"><h3>Limpeza</h3><p>Arquivos temporários, cache dos navegadores e de apps como Discord, Spotify e Steam, cache de shaders, miniaturas, relatórios de erro, lixeira e Windows Update.</p></div>
+   <div class="fr"><h3>Analisar antes</h3><p>Veja quanto cada categoria vai liberar antes de apagar qualquer coisa.</p></div>
+   <div class="fr"><h3>Desempenho</h3><p>Ative o Alto desempenho ou o Desempenho máximo do Windows e libere a memória RAM que os programas não estão usando.</p></div>
+   <div class="fr"><h3>Modo jogo</h3><p>Dê prioridade alta ao jogo aberto e feche o que estiver pesando em segundo plano.</p></div>
+   <div class="fr"><h3>Inicialização</h3><p>Desligue os programas que abrem junto com o Windows. Nada é desinstalado e dá pra religar quando quiser.</p></div>
+   <div class="fr"><h3>Rede</h3><p>Limpe o cache de DNS, renove o IP, resete a rede e teste o ping para qualquer endereço.</p></div>
+   <div class="fr"><h3>Relatórios</h3><p>Cada limpeza gera um relatório .txt com o que foi liberado.</p></div>
+   <div class="fr"><h3>Seu jeito</h3><p>Português, inglês ou russo. Oito cores de tema.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="sec" id="seguranca">
+ <h2>Seguro por padrão.</h2>
+ <div class="sg">
+  <div><h3>Nada sai do seu PC</h3><p>Seus arquivos e os dados do sistema nunca são enviados. O app só confere com a gente se a sua key é válida.</p></div>
+  <div><h3>Só o que é lixo</h3><p>Senhas, histórico, logins e músicas baixadas para ouvir offline não são tocados. Arquivos em uso são pulados.</p></div>
+  <div><h3>Reversível onde dá</h3><p>Programas da inicialização são só desligados, do mesmo jeito que o Gerenciador de Tarefas faz. Nada de ajustes escondidos no registro.</p></div>
+ </div>
+</section>
+
+<section class="sec" id="como">
+ <h2>Como funciona</h2>
+ <div class="steps" id="steps">
+  <div><h3>Baixe e abra</h3><p>Baixe o app para Windows e abra.</p></div>
+  <div><h3>Entre com a key</h3><p>Crie sua conta com a key. Ela fica ligada só ao seu PC.</p></div>
+  <div><h3>Analise</h3><p>Veja quanto espaço cada categoria vai liberar.</p></div>
+  <div><h3>Otimize</h3><p>Um clique em Otimizar agora e pronto.</p></div>
+ </div>
+</section>
+
+<section class="plans" id="planos">
+ <div class="big" id="big" aria-hidden="true" data-nt></div>
+ <h2 style="position:absolute;width:1px;height:1px;overflow:hidden">Planos</h2>
+ <p class="launch" id="lb" hidden data-nt></p>
+ <div class="grid" id="pg"></div>
+ <p class="trial"><a href="#" data-free>Quer testar antes? Pegue uma key grátis de 1 dia com tudo liberado.</a></p>
+ <p class="pay"><span>Formas de pagamento</span><b>Pix</b><b>Criptomoedas</b></p>
+ <div class="tbl"><table><thead><tr><th></th><th>Diário</th><th>Semanal</th><th>Mensal</th></tr></thead><tbody id="ptb"></tbody></table></div>
+</section>
+
+<section class="faq" id="faq">
+ <h2>Perguntas frequentes</h2>
+ <details><summary>Qual a diferença entre os planos?</summary><p>O Diário tem o básico: painel, limpeza simples, liberar RAM e DNS. O Semanal soma o cache de navegadores e apps, a inicialização e o Alto desempenho. O Mensal libera tudo, incluindo Modo jogo, Desempenho máximo, limpeza profunda e Otimizar agora em 1 clique.</p></details>
+ <details><summary>Funciona em Mac ou Linux?</summary><p>Não. O REAPER é feito para Windows 10 e 11.</p></details>
+ <details><summary>Pode apagar algo importante?</summary><p>Ele só apaga pastas de cache e arquivos temporários, que o Windows e os programas recriam sozinhos. Senhas, histórico, logins e documentos não são tocados. Use o botão Analisar para ver tudo antes.</p></details>
+ <details><summary>Por que algumas opções pedem administrador?</summary><p>Pastas do Windows, como a Temp do sistema e o Prefetch, só podem ser limpas com permissão de administrador. O app tem um botão para reabrir como administrador.</p></details>
+ <details><summary>Vai deixar meu PC mais rápido?</summary><p>Depende do PC. Liberar espaço, tirar programas da inicialização e usar o plano de energia certo costuma ajudar bastante, principalmente em PCs mais cheios. Não prometemos números de FPS.</p></details>
+ <details><summary>O antivírus pode reclamar?</summary><p>Programas que apagam arquivos e mudam a prioridade de processos às vezes são marcados por engano. Baixe só pelo nosso site.</p></details>
+ <details><summary>Como recebo a chave depois de pagar?</summary><p>Assim que o pagamento é confirmado, você recebe a chave de licença para colar no app. Se algo der errado, chame no contato dos termos.</p></details>
+</section>
+<section class="sec cta"><h2>Comece pelo teste grátis.</h2><p class="lead">Analise o seu PC, veja quanto espaço volta e só depois decida.</p><div class="row"><a class="btn w" href="#planos">Ver planos</a><a class="btn" href="#" data-free>Baixar grátis</a></div></section>
+</main>
+
+<footer><span>REAPER. Otimizador para Windows.</span><span><button data-doc="0">Termos de uso</button> &nbsp;·&nbsp; <button data-doc="1">Privacidade</button> &nbsp;·&nbsp; <button data-doc="2">Reembolso</button></span></footer>
+
+<dialog id="pay"><h3 id="pn" data-nt></h3><p id="pp" data-nt></p>
+ <div class="qr" id="qr" data-nt></div>
+ <button class="btn w" id="cp" type="button">Copiar código Pix</button>
+ <a class="btn" id="cmp" target="_blank" rel="noopener">Já paguei, abrir ticket no Discord</a>
+ <a class="btn" id="cr" target="_blank" rel="noopener">Pagar com cripto</a>
+ <p class="note" id="pnote" data-nt></p>
+ <button class="btn" style="width:100%;margin-top:8px" onclick="this.closest('dialog').close()">Fechar</button>
+</dialog>
+
+<dialog id="terms">
+ <div class="tabs" role="tablist"><button role="tab" aria-selected="true">Termos de uso</button><button role="tab" aria-selected="false">Privacidade</button><button role="tab" aria-selected="false">Reembolso</button><button class="x" aria-label="Fechar" onclick="this.closest('dialog').close()">×</button></div>
+ <div class="doc">
+  <h4>1. O que é o REAPER</h4><p>Programa para Windows que limpa arquivos temporários e caches, ajusta o desempenho, gerencia a inicialização e testa a rede do computador do próprio usuário.</p>
+  <h4>2. Uso e riscos</h4><p>As limpezas apagam arquivos de forma permanente. O app só mexe em pastas de cache e temporárias e mostra tudo no botão Analisar, mas feche seus programas antes e use por sua conta. Fechar programas pelo Modo jogo perde o que não foi salvo neles.</p>
+  <h4>3. Licença</h4><p>A chave de licença é pessoal e intransferível. É proibido revender, compartilhar, redistribuir ou fazer engenharia reversa do programa. Podemos cancelar licenças usadas em desacordo com estes termos.</p>
+  <h4>4. Uso proibido</h4><p>É proibido usar o REAPER em computadores de outras pessoas sem autorização, ou para prejudicar terceiros.</p>
+  <h4>5. Sem garantia</h4><p>O programa é fornecido como está. Não garantimos um ganho específico de desempenho, e atualizações do Windows podem mudar como algumas funções se comportam. Nossa responsabilidade se limita ao valor que você pagou.</p>
+  <h4>6. Contato</h4><p>Dúvidas e suporte: <span data-contact></span>. Estes termos seguem a lei brasileira.</p>
+ </div>
+ <div class="doc" hidden>
+  <h4>O que fica no seu computador</h4><p>Seus arquivos, a lista de programas e os dados do sistema ficam só no seu PC. O app não envia isso para nós.</p>
+  <h4>O que o app envia</h4><p>Só o necessário para a sua conta: username, senha, key e um identificador do PC que limita a key a um computador.</p>
+  <h4>O que coletamos na compra</h4><p>Apenas o necessário para a venda: os dados que o meio de pagamento informa (como nome, e-mail e valor pago) e o contato que você usar no suporte. Este site não usa cookies de rastreamento.</p>
+  <h4>Compartilhamento</h4><p>Não vendemos seus dados. Eles só passam pelo provedor de pagamento escolhido por você.</p>
+  <h4>Seus direitos</h4><p>Você pode pedir acesso ou exclusão dos seus dados (LGPD) pelo contato: <span data-contact></span>.</p>
+ </div>
+ <div class="doc" hidden>
+  <h4>Direito de arrependimento</h4><p>Compras feitas pela internet podem ser canceladas em até 7 dias após o pagamento, com reembolso integral, conforme o art. 49 do Código de Defesa do Consumidor.</p>
+  <h4>Como pedir</h4><p>Envie a chave e o comprovante para <span data-contact></span>. O reembolso é feito pelo mesmo meio de pagamento, e a chave é cancelada.</p>
+  <h4>Criptomoedas</h4><p>Reembolsos de pagamentos em cripto são devolvidos na mesma moeda, no valor pago em reais na data da compra, descontadas as taxas de rede.</p>
+  <h4>Depois dos 7 dias</h4><p>Não há reembolso por mudança de ideia. Se o programa não funcionar por falha nossa, entre em contato.</p>
+ </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+const CFG={
+ download:"https://github.com/envelhece/reaper-downloads/releases/latest/download/REAPER-Setup.exe",  // sempre a versão mais nova
+ videos:{pt:"reaper.mp4",en:"",ru:""},  // vídeo em português; en/ru ficam sem a seção
+ contact:"Discord do REAPER: discord.gg/txseBnArfN",
+ // Pix copia e cola SEM valor (QR estático do Nubank). O site gera um QR com o valor de cada plano.
+ pix:"00020126580014BR.GOV.BCB.PIX0136ec89a025-d33c-4694-ab8d-cb63bf8362385204000053039865802BR5925Kauan Rodrigues de Mirand6009SAO PAULO62140510Bgh0EI2ARt630446C6",
+ // link para mandar o comprovante (ex.: "https://wa.me/5511999999999" ou convite do Discord)
+ proof:"https://discord.gg/txseBnArfN",
+ // preços (R$) e dias de cada plano: mude só aqui, o resto (por dia, "a mais", tabela) é calculado
+ plans:[
+  {id:"diario",name:"Diário",price:9.90,days:1,per:"por dia",tier:1},
+  {id:"semanal",name:"Semanal",price:14.90,days:7,per:"por semana",tier:2},
+  {id:"mensal",name:"Mensal",price:19.90,days:30,per:"por mês",tier:3,best:true,launch:9.90}
+ ],
+ // preço de lançamento: vale até essa data (depois o site volta sozinho pro preço normal)
+ launchEnd:"2026-11-21T23:59:59-03:00",
+ // o que cada plano libera (igual ao app): [função, plano mínimo 1/2/3, aparece riscado nos planos menores?]
+ feats:[
+  ["Painel em tempo real",1],["Limpeza básica (temporários, lixeira, miniaturas)",1],["Liberar RAM",1],["Limpar DNS e teste de ping",1],
+  ["Cache de navegadores e apps",2],["Gerenciar a inicialização",2,1],["Plano Alto desempenho",2],["Renovar IP",2],
+  ["Modo jogo (prioridade alta e fechar apps)",3,1],["Otimizar agora em 1 clique",3,1],["Desempenho máximo",3],
+  ["Limpeza profunda do Windows",3],["Cache de shaders",3],["Otimizar sozinho ao abrir o app",3],["Resetar rede (Winsock)",3]
+ ],
+ checkout:{diario:{pix:"",cripto:""},semanal:{pix:"",cripto:""},mensal:{pix:"",cripto:""}}
+};
+const LOGO="data:image/jpeg;base64,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";
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const calm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const D={"Início": ["Home", "Главная"], "Funções": ["Features", "Функции"], "Planos": ["Plans", "Тарифы"], "FAQ": ["FAQ", "FAQ"], "Baixar": ["Download", "Скачать"], "Principal": ["Main", "Главное меню"], "Seu PC mais rápido em um clique.": ["A faster PC in one click.", "Быстрый ПК в один клик."], "Limpe o lixo, libere memória e deixe os jogos rodando lisos. O REAPER mostra o que vai fazer antes de fazer.": ["Clear out junk, free up memory and keep your games running smooth. REAPER shows you what it will do before it does it.", "Очистите мусор, освободите память и играйте без подтормаживаний. REAPER показывает, что сделает, ещё до того, как сделает."], "Ver planos": ["See plans", "Смотреть тарифы"], "Testar grátis": ["Try free", "Попробовать бесплатно"], "passe o mouse sobre a logo": ["hover over the logo", "наведите курсор на логотип"], "Logo do REAPER formada por pontos": ["REAPER logo made of dots", "Логотип REAPER из точек"], "Limpeza de lixo e cache": ["Junk and cache cleanup", "Очистка мусора и кэша"], "Modo jogo e plano de energia": ["Game mode and power plan", "Игровой режим и схема питания"], "Inicialização mais leve": ["Lighter startup", "Лёгкая автозагрузка"], "Rede e ping": ["Network and ping", "Сеть и пинг"], "Português, inglês e russo": ["Portuguese, English and Russian", "Португальский, английский и русский"], "Veja em ação": ["See it in action", "Посмотрите в действии"], "O REAPER limpando, ativando o modo jogo e testando a rede. Imagens ilustrativas.": ["REAPER cleaning, turning on game mode and testing the network. Illustrative footage.", "REAPER чистит, включает игровой режим и проверяет сеть. Иллюстративные кадры."], "Veja ele trabalhando": ["Watch it work", "Посмотрите в работе"], "Você acompanha quanto espaço está voltando, categoria por categoria, e quantos arquivos em uso foram pulados.": ["You can follow how much space is coming back, category by category, and how many in-use files were skipped.", "Вы видите, сколько места освобождается по каждой категории и сколько занятых файлов пропущено."], "Demonstração animada do app": ["Animated app demo", "Анимированная демонстрация приложения"], "Cor do tema": ["Theme color", "Цвет темы"], "Cor": ["Color", "Цвет"], "liberados": ["freed", "освобождено"], "Parar": ["Stop", "Остановить"], "Detalhes ▾": ["Details ▾", "Подробности ▾"], "Arquivos temporários": ["Temporary files", "Временные файлы"], "Cache dos navegadores": ["Browser cache", "Кэш браузеров"], "Cache de apps": ["App cache", "Кэш приложений"], "Cache de shaders": ["Shader cache", "Кэш шейдеров"], "Relatórios de erro": ["Error reports", "Отчёты об ошибках"], "Arquivo em uso, pulado": ["File in use, skipped", "Файл занят, пропущен"], "Memória liberada: 512 MB": ["Memory freed: 512 MB", "Освобождено памяти: 512 МБ"], "Concluído.": ["Done.", "Готово."], "Cada tela do app": ["Every screen in the app", "Все экраны приложения"], "Painel": ["Dashboard", "Панель"], "Limpeza": ["Cleanup", "Очистка"], "Desempenho": ["Performance", "Ускорение"], "Inicialização": ["Startup", "Автозагрузка"], "Rede": ["Network", "Сеть"], "Ajustes": ["Settings", "Настройки"], "Sair": ["Sign out", "Выйти"], "CPU, memória e disco em tempo real, e o botão Otimizar agora que faz tudo de uma vez.": ["CPU, memory and disk in real time, plus the Optimize now button that does it all at once.", "Процессор, память и диск в реальном времени и кнопка «Оптимизировать», которая делает всё сразу."], "Como o seu PC está agora.": ["How your PC is doing right now.", "Состояние вашего ПК сейчас."], "Processador": ["Processor", "Процессор"], "Memória": ["Memory", "Память"], "Disco C:": ["Disk C:", "Диск C:"], "Sistema": ["System", "Система"], "Placa de vídeo": ["Graphics card", "Видеокарта"], "Ligado há": ["Uptime", "Время работы"], "2d 4h 12min": ["2d 4h 12m", "2 д 4 ч 12 мин"], "Otimizar agora": ["Optimize now", "Оптимизировать"], "Marque as categorias, clique em Analisar para ver quanto volta e depois em Limpar.": ["Pick the categories, hit Analyze to see how much comes back, then hit Clean.", "Отметьте категории, нажмите «Анализ», чтобы увидеть, сколько освободится, затем «Очистить»."], "Analise primeiro para ver quanto espaço vai voltar.": ["Analyze first to see how much space you'll get back.", "Сначала проанализируйте, сколько места освободится."], "Lixeira": ["Recycle Bin", "Корзина"], "2,3 GB": ["2.3 GB", "2,3 ГБ"], "1,3 GB": ["1.3 GB", "1,3 ГБ"], "1,4 GB": ["1.4 GB", "1,4 ГБ"], "3,1 GB": ["3.1 GB", "3,1 ГБ"], "742 MB": ["742 MB", "742 МБ"], "640 MB": ["640 MB", "640 МБ"], "118 MB": ["118 MB", "118 МБ"], "620 MB": ["620 MB", "620 МБ"], "4,4 GB podem ser liberados": ["4.4 GB can be freed", "Можно освободить 4,4 ГБ"], "Analisar": ["Analyze", "Анализ"], "Limpar": ["Clean", "Очистить"], "Plano de energia em um clique, RAM liberada e modo jogo com prioridade alta para o jogo aberto.": ["Power plan in one click, freed RAM and a game mode that gives the running game high priority.", "Схема питания в один клик, освобождение ОЗУ и игровой режим с высоким приоритетом для запущенной игры."], "Plano de energia: Alto desempenho": ["Power plan: High performance", "Схема питания: Высокая производительность"], "Alto desempenho": ["High performance", "Высокая производительность"], "Desempenho máximo": ["Ultimate performance", "Максимальная производительность"], "Liberar RAM": ["Free RAM", "Освободить ОЗУ"], "jogo.exe": ["game.exe", "game.exe"], "Prioridade alta": ["High priority", "Высокий приоритет"], "Fechar marcados": ["Close checked", "Закрыть отмеченные"], "Veja tudo que abre com o Windows e desligue com um clique. Dá pra religar quando quiser.": ["See everything that starts with Windows and turn it off with one click. You can turn it back on any time.", "Смотрите всё, что запускается вместе с Windows, и отключайте одним кликом. Включить снова можно в любой момент."], "Desligar não desinstala nada.": ["Turning off uninstalls nothing.", "Отключение ничего не удаляет."], "Usuário": ["User", "Пользователь"], "Todos os usuários": ["All users", "Все пользователи"], "5 programas · 3 ligados": ["5 programs · 3 on", "Программ: 5 · включено: 3"], "Limpe o DNS, renove o IP, resete a rede e meça o ping para qualquer endereço.": ["Flush DNS, renew your IP, reset the network and measure ping to any address.", "Очистите DNS, обновите IP, сбросьте сеть и измерьте пинг до любого адреса."], "Limpar cache de DNS": ["Flush DNS cache", "Очистить кэш DNS"], "Renovar IP": ["Renew IP", "Обновить IP"], "Resetar rede": ["Reset network", "Сброс сети"], "Testar": ["Test", "Проверить"], "8.8.8.8: média 14 ms · mín 12 · máx 19 · perda 0%": ["8.8.8.8: avg 14 ms · min 12 · max 19 · loss 0%", "8.8.8.8: среднее 14 мс · мин 12 · макс 19 · потери 0%"], "google.com: média 16 ms · mín 13 · máx 22 · perda 0%": ["google.com: avg 16 ms · min 13 · max 22 · loss 0%", "google.com: среднее 16 мс · мин 13 · макс 22 · потери 0%"], "O que ele faz": ["What it does", "Что он умеет"], "Tudo roda no seu computador. Nada é enviado para a internet.": ["Everything runs on your computer. Nothing is sent to the internet.", "Всё работает на вашем компьютере. Ничего не отправляется в интернет."], "CPU, memória e disco em tempo real, com o nome do processador, da placa de vídeo e da versão do Windows.": ["CPU, memory and disk in real time, with your processor, graphics card and Windows version.", "Процессор, память и диск в реальном времени, а также модель процессора, видеокарты и версия Windows."], "Arquivos temporários, cache dos navegadores e de apps como Discord, Spotify e Steam, cache de shaders, miniaturas, relatórios de erro, lixeira e Windows Update.": ["Temporary files, browser cache and cache from apps like Discord, Spotify and Steam, shader cache, thumbnails, error reports, Recycle Bin and Windows Update.", "Временные файлы, кэш браузеров и приложений вроде Discord, Spotify и Steam, кэш шейдеров, эскизы, отчёты об ошибках, корзина и Windows Update."], "Analisar antes": ["Analyze first", "Сначала анализ"], "Veja quanto cada categoria vai liberar antes de apagar qualquer coisa.": ["See how much each category will free before anything is deleted.", "Узнайте, сколько освободит каждая категория, прежде чем что-то удалять."], "Ative o Alto desempenho ou o Desempenho máximo do Windows e libere a memória RAM que os programas não estão usando.": ["Turn on Windows High or Ultimate performance and free the RAM that programs aren't using.", "Включите высокую или максимальную производительность Windows и освободите ОЗУ, которую программы не используют."], "Modo jogo": ["Game mode", "Игровой режим"], "Dê prioridade alta ao jogo aberto e feche o que estiver pesando em segundo plano.": ["Give the running game high priority and close what's weighing in the background.", "Дайте запущенной игре высокий приоритет и закройте то, что нагружает систему в фоне."], "Desligue os programas que abrem junto com o Windows. Nada é desinstalado e dá pra religar quando quiser.": ["Turn off programs that start with Windows. Nothing is uninstalled and you can turn them back on any time.", "Отключайте программы, которые запускаются вместе с Windows. Ничего не удаляется, включить снова можно в любой момент."], "Limpe o cache de DNS, renove o IP, resete a rede e teste o ping para qualquer endereço.": ["Flush the DNS cache, renew your IP, reset the network and test ping to any address.", "Очистите кэш DNS, обновите IP, сбросьте сеть и проверьте пинг до любого адреса."], "Relatórios": ["Reports", "Отчёты"], "Cada limpeza gera um relatório .txt com o que foi liberado.": ["Every cleanup saves a .txt report of what was freed.", "Каждая очистка сохраняет отчёт .txt о том, что было освобождено."], "Seu jeito": ["Your way", "Под вас"], "Português, inglês ou russo. Oito cores de tema.": ["Portuguese, English or Russian. Eight theme colors.", "Португальский, английский или русский. Восемь цветов темы."], "Seguro por padrão.": ["Safe by default.", "Безопасно по умолчанию."], "Nada sai do seu PC": ["Nothing leaves your PC", "Ничего не покидает ваш ПК"], "Seus arquivos e os dados do sistema nunca são enviados. O app só confere com a gente se a sua key é válida.": ["Your files and system data are never sent. The app only checks with us that your key is valid.", "Ваши файлы и данные системы никогда не отправляются. Приложение только проверяет у нас, что ключ действителен."], "Só o que é lixo": ["Only the junk", "Только мусор"], "Senhas, histórico, logins e músicas baixadas para ouvir offline não são tocados. Arquivos em uso são pulados.": ["Passwords, history, logins and music downloaded for offline listening are left alone. Files in use are skipped.", "Пароли, история, входы и скачанная для офлайна музыка не затрагиваются. Занятые файлы пропускаются."], "Reversível onde dá": ["Reversible where possible", "Обратимо, где возможно"], "Programas da inicialização são só desligados, do mesmo jeito que o Gerenciador de Tarefas faz. Nada de ajustes escondidos no registro.": ["Startup programs are only turned off, the same way Task Manager does it. No hidden registry tweaks.", "Программы автозагрузки просто отключаются — так же, как это делает Диспетчер задач. Никаких скрытых правок реестра."], "Como funciona": ["How it works", "Как это работает"], "Baixe e abra": ["Download and open", "Скачайте и откройте"], "Baixe o app para Windows e abra.": ["Download the Windows app and open it.", "Скачайте приложение для Windows и откройте его."], "Entre com a key": ["Sign in with your key", "Войдите с ключом"], "Crie sua conta com a key. Ela fica ligada só ao seu PC.": ["Create your account with the key. It's tied to your PC only.", "Создайте аккаунт с ключом. Он привязывается только к вашему ПК."], "Analise": ["Analyze", "Анализ"], "Veja quanto espaço cada categoria vai liberar.": ["See how much space each category will free.", "Посмотрите, сколько места освободит каждая категория."], "Otimize": ["Optimize", "Оптимизация"], "Um clique em Otimizar agora e pronto.": ["One click on Optimize now and you're done.", "Один клик по «Оптимизировать» — и готово."], "Grátis": ["Free", "Бесплатно"], "Mensal": ["Monthly", "Месячный"], "Vitalício": ["Lifetime", "Навсегда"], "R$ 0": ["R$ 0", "R$ 0"], "/mês": ["/mo", "/мес."], "Teste de 1 dia com todas as funções": ["1-day trial with every feature", "Пробный день со всеми функциями"], "Limpeza, desempenho, inicialização e rede": ["Cleanup, performance, startup and network", "Очистка, ускорение, автозагрузка и сеть"], "Sem cartão": ["No card needed", "Без карты"], "Todas as funções": ["Every feature", "Все функции"], "Atualizações automáticas": ["Automatic updates", "Автообновления"], "Suporte pelo contato": ["Support by contact", "Поддержка по контакту"], "Cancele quando quiser": ["Cancel any time", "Отмена в любой момент"], "Tudo do plano mensal": ["Everything in Monthly", "Всё из месячного тарифа"], "Pague uma vez e use sempre": ["Pay once, use forever", "Платите один раз, пользуйтесь всегда"], "Atualizações incluídas": ["Updates included", "Обновления включены"], "Melhor custo-benefício": ["Best value", "Самый выгодный"], "Assinar": ["Subscribe", "Подписаться"], "Comprar": ["Buy", "Купить"], "Formas de pagamento": ["Payment methods", "Способы оплаты"], "Pix": ["Pix", "Pix"], "Criptomoedas": ["Crypto", "Криптовалюта"], "Duração": ["Duration", "Срок"], "1 dia": ["1 day", "1 день"], "30 dias": ["30 days", "30 дней"], "Para sempre": ["Forever", "Навсегда"], "Sim": ["Yes", "Да"], "Atualizações": ["Updates", "Обновления"], "Preço": ["Price", "Цена"], "PCs por key": ["PCs per key", "ПК на ключ"], "Plano": ["Plan", "Тариф"], "por mês": ["per month", "в месяц"], "pagamento único": ["one-time payment", "разовый платёж"], "Escolha como pagar.": ["Choose how to pay.", "Выберите способ оплаты."], "Pagar com Pix": ["Pay with Pix", "Оплатить через Pix"], "Pagar com cripto": ["Pay with crypto", "Оплатить криптовалютой"], "Fechar": ["Close", "Закрыть"], "A chave de licença chega após a confirmação do pagamento.": ["Your license key arrives once the payment is confirmed.", "Лицензионный ключ придёт после подтверждения оплаты."], "Links de pagamento ainda não configurados (CFG.checkout no código).": ["Payment links not set up yet (CFG.checkout in the code).", "Ссылки на оплату ещё не настроены (CFG.checkout в коде)."], "Perguntas frequentes": ["FAQ", "Частые вопросы"], "Funciona em Mac ou Linux?": ["Does it work on Mac or Linux?", "Работает на Mac или Linux?"], "Não. O REAPER é feito para Windows 10 e 11.": ["No. REAPER is made for Windows 10 and 11.", "Нет. REAPER создан для Windows 10 и 11."], "Pode apagar algo importante?": ["Can it delete something important?", "Может ли он удалить что-то важное?"], "Ele só apaga pastas de cache e arquivos temporários, que o Windows e os programas recriam sozinhos. Senhas, histórico, logins e documentos não são tocados. Use o botão Analisar para ver tudo antes.": ["It only deletes cache folders and temporary files, which Windows and your programs rebuild on their own. Passwords, history, logins and documents are not touched. Use the Analyze button to see everything first.", "Он удаляет только папки кэша и временные файлы, которые Windows и программы создают заново сами. Пароли, история, входы и документы не затрагиваются. Нажмите «Анализ», чтобы сначала всё увидеть."], "Por que algumas opções pedem administrador?": ["Why do some options need administrator?", "Почему некоторым функциям нужны права администратора?"], "Pastas do Windows, como a Temp do sistema e o Prefetch, só podem ser limpas com permissão de administrador. O app tem um botão para reabrir como administrador.": ["Windows folders, like the system Temp and Prefetch, can only be cleaned with administrator rights. The app has a button to reopen as administrator.", "Папки Windows, например системный Temp и Prefetch, можно очистить только с правами администратора. В приложении есть кнопка для перезапуска от администратора."], "Vai deixar meu PC mais rápido?": ["Will it make my PC faster?", "Мой ПК станет быстрее?"], "Depende do PC. Liberar espaço, tirar programas da inicialização e usar o plano de energia certo costuma ajudar bastante, principalmente em PCs mais cheios. Não prometemos números de FPS.": ["It depends on the PC. Freeing space, removing startup programs and using the right power plan usually helps a lot, especially on cluttered PCs. We don't promise FPS numbers.", "Зависит от ПК. Освобождение места, отключение автозагрузки и правильная схема питания обычно заметно помогают, особенно на захламлённых ПК. Мы не обещаем конкретный FPS."], "O antivírus pode reclamar?": ["Could my antivirus complain?", "Может ли антивирус ругаться?"], "Programas que apagam arquivos e mudam a prioridade de processos às vezes são marcados por engano. Baixe só pelo nosso site.": ["Programs that delete files and change process priority are sometimes flagged by mistake. Only download from our site.", "Программы, которые удаляют файлы и меняют приоритет процессов, иногда помечаются по ошибке. Скачивайте только с нашего сайта."], "Como recebo a chave depois de pagar?": ["How do I get my key after paying?", "Как получить ключ после оплаты?"], "Assim que o pagamento é confirmado, você recebe a chave de licença para colar no app. Se algo der errado, chame no contato dos termos.": ["As soon as the payment is confirmed, you get the license key to paste into the app. If anything goes wrong, reach out through the contact in the terms.", "Как только оплата подтверждена, вы получаете лицензионный ключ для приложения. Если что-то пошло не так, напишите по контакту из условий."], "Comece pelo teste grátis.": ["Start with the free trial.", "Начните с бесплатного пробного дня."], "Analise o seu PC, veja quanto espaço volta e só depois decida.": ["Analyze your PC, see how much space comes back, then decide.", "Проанализируйте ПК, посмотрите, сколько места освободится, и только потом решайте."], "Baixar grátis": ["Download free", "Скачать бесплатно"], "REAPER. Otimizador para Windows.": ["REAPER. Optimizer for Windows.", "REAPER. Оптимизатор для Windows."], "Termos de uso": ["Terms of use", "Условия использования"], "Privacidade": ["Privacy", "Конфиденциальность"], "Reembolso": ["Refunds", "Возврат"], "1. O que é o REAPER": ["1. What REAPER is", "1. Что такое REAPER"], "Programa para Windows que limpa arquivos temporários e caches, ajusta o desempenho, gerencia a inicialização e testa a rede do computador do próprio usuário.": ["A Windows program that cleans temporary files and caches, tunes performance, manages startup and tests the network on the user's own computer.", "Программа для Windows, которая очищает временные файлы и кэш, настраивает производительность, управляет автозагрузкой и проверяет сеть на компьютере самого пользователя."], "2. Uso e riscos": ["2. Use and risks", "2. Использование и риски"], "As limpezas apagam arquivos de forma permanente. O app só mexe em pastas de cache e temporárias e mostra tudo no botão Analisar, mas feche seus programas antes e use por sua conta. Fechar programas pelo Modo jogo perde o que não foi salvo neles.": ["Cleanups delete files permanently. The app only touches cache and temporary folders and shows everything under Analyze, but close your programs first and use it at your own risk. Closing programs from Game mode loses anything unsaved in them.", "Очистка удаляет файлы безвозвратно. Приложение затрагивает только папки кэша и временных файлов и показывает всё в «Анализе», но закройте программы заранее и используйте на свой риск. Закрытие программ в игровом режиме теряет несохранённые данные."], "3. Licença": ["3. License", "3. Лицензия"], "A chave de licença é pessoal e intransferível. É proibido revender, compartilhar, redistribuir ou fazer engenharia reversa do programa. Podemos cancelar licenças usadas em desacordo com estes termos.": ["The license key is personal and non-transferable. Reselling, sharing, redistributing or reverse engineering the program is prohibited. We may cancel licenses used against these terms.", "Лицензионный ключ личный и не передаётся. Запрещено перепродавать, передавать, распространять программу или проводить её обратную разработку. Мы можем отозвать лицензии, используемые в нарушение этих условий."], "4. Uso proibido": ["4. Prohibited use", "4. Запрещённое использование"], "É proibido usar o REAPER em computadores de outras pessoas sem autorização, ou para prejudicar terceiros.": ["Using REAPER on other people's computers without permission, or to harm others, is prohibited.", "Запрещено использовать REAPER на чужих компьютерах без разрешения или во вред другим."], "5. Sem garantia": ["5. No warranty", "5. Без гарантий"], "O programa é fornecido como está. Não garantimos um ganho específico de desempenho, e atualizações do Windows podem mudar como algumas funções se comportam. Nossa responsabilidade se limita ao valor que você pagou.": ["The program is provided as is. We don't guarantee a specific performance gain, and Windows updates may change how some features behave. Our liability is limited to the amount you paid.", "Программа предоставляется как есть. Мы не гарантируем конкретного прироста производительности, а обновления Windows могут изменить работу некоторых функций. Наша ответственность ограничена суммой оплаты."], "6. Contato": ["6. Contact", "6. Контакты"], "Dúvidas e suporte:": ["Questions and support:", "Вопросы и поддержка:"], ". Estes termos seguem a lei brasileira.": [". These terms follow Brazilian law.", ". Эти условия регулируются законодательством Бразилии."], "O que fica no seu computador": ["What stays on your computer", "Что остаётся на вашем компьютере"], "Seus arquivos, a lista de programas e os dados do sistema ficam só no seu PC. O app não envia isso para nós.": ["Your files, your program list and your system data stay on your PC. The app doesn't send them to us.", "Ваши файлы, список программ и данные системы остаются на вашем ПК. Приложение не отправляет их нам."], "O que o app envia": ["What the app sends", "Что отправляет приложение"], "Só o necessário para a sua conta: username, senha, key e um identificador do PC que limita a key a um computador.": ["Only what your account needs: username, password, key and a PC identifier that limits the key to one computer.", "Только то, что нужно для аккаунта: имя, пароль, ключ и идентификатор ПК, который привязывает ключ к одному компьютеру."], "O que coletamos na compra": ["What we collect when you buy", "Что мы собираем при покупке"], "Apenas o necessário para a venda: os dados que o meio de pagamento informa (como nome, e-mail e valor pago) e o contato que você usar no suporte. Este site não usa cookies de rastreamento.": ["Only what the sale needs: the details the payment provider shares (such as name, email and amount paid) and the contact you use for support. This site doesn't use tracking cookies.", "Только необходимое для продажи: данные от платёжного сервиса (имя, e-mail, сумма) и контакт, который вы используете для поддержки. Сайт не использует отслеживающие cookie."], "Compartilhamento": ["Sharing", "Передача данных"], "Não vendemos seus dados. Eles só passam pelo provedor de pagamento escolhido por você.": ["We don't sell your data. It only goes through the payment provider you choose.", "Мы не продаём ваши данные. Они проходят только через выбранный вами платёжный сервис."], "Seus direitos": ["Your rights", "Ваши права"], "Você pode pedir acesso ou exclusão dos seus dados (LGPD) pelo contato:": ["You can request access to or deletion of your data (LGPD) through:", "Вы можете запросить доступ к данным или их удаление (LGPD) по контакту:"], "Direito de arrependimento": ["Right of withdrawal", "Право на отказ"], "Compras feitas pela internet podem ser canceladas em até 7 dias após o pagamento, com reembolso integral, conforme o art. 49 do Código de Defesa do Consumidor.": ["Online purchases can be cancelled within 7 days of payment for a full refund, under article 49 of the Brazilian Consumer Protection Code.", "Покупки в интернете можно отменить в течение 7 дней после оплаты с полным возвратом согласно ст. 49 Кодекса защиты прав потребителей Бразилии."], "Como pedir": ["How to request", "Как запросить"], "Envie a chave e o comprovante para": ["Send the key and the receipt to", "Отправьте ключ и чек на"], ". O reembolso é feito pelo mesmo meio de pagamento, e a chave é cancelada.": [". The refund goes back through the same payment method and the key is cancelled.", ". Возврат производится тем же способом оплаты, а ключ отзывается."], "Criptomoedas ": ["Crypto ", "Криптовалюта "], "Reembolsos de pagamentos em cripto são devolvidos na mesma moeda, no valor pago em reais na data da compra, descontadas as taxas de rede.": ["Crypto refunds are returned in the same coin, for the amount paid in reais on the purchase date, minus network fees.", "Возврат за криптовалюту производится в той же монете на сумму в реалах на дату покупки за вычетом сетевых комиссий."], "Depois dos 7 dias": ["After 7 days", "После 7 дней"], "Não há reembolso por mudança de ideia. Se o programa não funcionar por falha nossa, entre em contato.": ["There are no refunds for changing your mind. If the program doesn't work because of our mistake, get in touch.", "Возврата за передумывание нет. Если программа не работает по нашей вине, свяжитесь с нами."], "Diário": ["Daily", "Дневной"], "Semanal": ["Weekly", "Недельный"], "por dia": ["per day", "в день"], "por semana": ["per week", "в неделю"], "dia": ["day", "день"], "semana": ["week", "неделя"], "mês": ["month", "мес."], "{n} dias": ["{n} days", "{n} дн."], "{n} de acesso": ["{n} of access", "Доступ: {n}"], "Mais escolhido": ["Most popular", "Самый популярный"], "Só {d} a mais que o {p}": ["Only {d} more than {p}", "Всего на {d} дороже тарифа «{p}»"], "Só por hoje": ["Just for today", "Только на сегодня"], "sai {v} por dia": ["works out to {v} a day", "выходит {v} в день"], "{v} por dia": ["{v} a day", "{v} в день"], "Economize {x} por dia": ["Save {x} per day", "Экономия {x} в день"], "Preço por dia": ["Price per day", "Цена за день"], "Se pagasse por dia": ["If paid daily", "Если платить посуточно"], "Economia por dia": ["Savings per day", "Экономия в день"], "Quer testar antes? Pegue uma key grátis de 1 dia com tudo liberado.": ["Want to try first? Get a free 1-day key with everything unlocked.", "Хотите сначала попробовать? Возьмите бесплатный ключ на 1 день со всеми функциями."], "Preço de lançamento": ["Launch price", "Цена запуска"], "No Discord, entre em #comprar, clique em Comprar e mande o comprovante no ticket.": ["On Discord, go to #comprar, press Comprar and send the receipt in the ticket.", "В Discord зайдите в #comprar, нажмите Comprar и отправьте чек в тикете."], "Copiar código Pix": ["Copy Pix code", "Скопировать код Pix"], "Código copiado!": ["Code copied!", "Код скопирован!"], "Já paguei, abrir ticket no Discord": ["I paid, open a ticket on Discord", "Я оплатил, открыть тикет в Discord"], "Paguei o plano": ["I paid for the plan", "Я оплатил тариф"], "Meu username do REAPER:": ["My REAPER username:", "Мой логин REAPER:"], "Escaneie o QR no app do seu banco. Depois envie o comprovante com o seu username do REAPER e a key chega assim que o pagamento for confirmado.": ["Scan the QR in your bank app. Then send the receipt with your REAPER username and the key arrives as soon as the payment is confirmed.", "Отсканируйте QR в приложении банка. Затем отправьте чек и ваш логин REAPER — ключ придёт сразу после подтверждения оплаты."], "Mais barato que o {p}!": ["Cheaper than {p}!", "Дешевле, чем «{p}»!"], "Mensal por {v}": ["Monthly for {v}", "Месячный за {v}"], "acaba em {d}d {h}h {m}m {s}s": ["ends in {d}d {h}h {m}m {s}s", "осталось {d} д {h} ч {m} мин {s} с"], "Tudo do {p}": ["Everything in {p}", "Всё из тарифа «{p}»"], "exclusivo": ["exclusive", "эксклюзив"], "Painel em tempo real": ["Real-time dashboard", "Панель в реальном времени"], "Limpeza básica (temporários, lixeira, miniaturas)": ["Basic cleanup (temp files, Recycle Bin, thumbnails)", "Базовая очистка (временные файлы, корзина, эскизы)"], "Limpar DNS e teste de ping": ["DNS flush and ping test", "Очистка DNS и проверка пинга"], "Cache de navegadores e apps": ["Browser and app cache", "Кэш браузеров и приложений"], "Gerenciar a inicialização": ["Manage startup", "Управление автозагрузкой"], "Plano Alto desempenho": ["High performance power plan", "Схема «Высокая производительность»"], "Modo jogo (prioridade alta e fechar apps)": ["Game mode (high priority and close apps)", "Игровой режим (высокий приоритет и закрытие приложений)"], "Otimizar agora em 1 clique": ["Optimize now in 1 click", "Оптимизация в 1 клик"], "Limpeza profunda do Windows": ["Deep Windows cleanup", "Глубокая очистка Windows"], "Otimizar sozinho ao abrir o app": ["Auto-optimize when the app opens", "Автооптимизация при запуске"], "Resetar rede (Winsock)": ["Network reset (Winsock)", "Сброс сети (Winsock)"], "Qual a diferença entre os planos?": ["What's the difference between the plans?", "Чем отличаются тарифы?"], "O Diário tem o básico: painel, limpeza simples, liberar RAM e DNS. O Semanal soma o cache de navegadores e apps, a inicialização e o Alto desempenho. O Mensal libera tudo, incluindo Modo jogo, Desempenho máximo, limpeza profunda e Otimizar agora em 1 clique.": ["Daily has the basics: dashboard, simple cleanup, free RAM and DNS. Weekly adds browser and app cache, startup and High performance. Monthly unlocks everything, including Game mode, Ultimate performance, deep cleanup and Optimize now in 1 click.", "«Дневной» — база: панель, простая очистка, освобождение ОЗУ и DNS. «Недельный» добавляет кэш браузеров и приложений, автозагрузку и высокую производительность. «Месячный» открывает всё: игровой режим, максимальную производительность, глубокую очистку и оптимизацию в 1 клик."], "o contato de suporte informado na compra": ["the support contact given at purchase", "контакт поддержки, указанный при покупке"]};
+let lang='pt',hold=!calm;
+const LOC={pt:'pt-BR',en:'en-US',ru:'ru-RU'};
+const L=s=>lang==='pt'?s:(D[s]?D[s][lang==='en'?0:1]:s);
+function tr(root){const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode()){const p=n.parentElement;if(!p||p.closest('script,style,[data-nt]'))continue;if(n.__pt===undefined)n.__pt=n.nodeValue.trim();if(!n.__pt)continue;const v=n.nodeValue,a=v.match(/^\s*/)[0],b=v.match(/\s*$/)[0];n.nodeValue=a+L(n.__pt)+b}}
+
+$$('[data-contact]').forEach(e=>e.textContent=CFG.contact||'o contato de suporte informado na compra');
+$$('[data-free]').forEach(e=>{if(CFG.download!=="#"){e.href=CFG.download;e.setAttribute('download','')}});
+
+const T=$('#t'),H1='Seu PC mais rápido em um clique.',CH='abcdefghijklmnopqrstuvwxyz#$%&*+=?';let scr;
+function setH1(anim){const F=L(H1);T.setAttribute('aria-label',F);clearInterval(scr);if(!anim||calm){T.textContent=F;return}let f=0;scr=setInterval(()=>{f++;T.textContent=[...F].map((c,i)=>/[\s,.—]/.test(c)?c:(i<f/1.1?c:CH[Math.random()*CH.length|0])).join('');if(f>F.length*1.1+4){T.textContent=F;clearInterval(scr)}},34)}
+
+const big=$('#big');
+function bigs(){big.innerHTML='';[...L('Planos')].forEach((c,i)=>{const s=document.createElement('span');s.textContent=c;s.style.transitionDelay=i*70+'ms';big.appendChild(s)})}bigs();
+new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){big.classList.add('on');o.disconnect()}},{threshold:.25}).observe(big);
+if(!calm)addEventListener('scroll',()=>{const r=$('#planos').getBoundingClientRect();big.style.transform='translateY('+Math.max(-40,Math.min(60,r.top*.08))+'px)'},{passive:true});
+
+// ---- planos (efeito "balde de pipoca": cada degrau custa pouco a mais e dura muito mais)
+const F=(s,o)=>L(s).replace(/\{(\w+)\}/g,(_,k)=>o[k]);
+const brl=v=>'R$ '+v.toFixed(2).replace('.',',');
+const dur=d=>d===1?L('1 dia'):F('{n} dias',{n:d});
+const unit=d=>d===1?L('dia'):d===7?L('semana'):d===30?L('mês'):F('{n} dias',{n:d});
+const LAUNCH=()=>Date.now()<new Date(CFG.launchEnd).getTime();
+const priceOf=p=>LAUNCH()&&p.launch?p.launch:p.price;
+function launchBar(){
+ const el=$('#lb');if(!LAUNCH()){el.hidden=true;return}
+ el.hidden=false;const s=Math.max(0,(new Date(CFG.launchEnd)-Date.now())/1000|0);
+ const d=s/86400|0,h=s%86400/3600|0,m=s%3600/60|0,ss=s%60;
+ el.innerHTML='<b>'+L('Preço de lançamento')+'</b> · '+F('Mensal por {v}',{v:brl(CFG.plans.find(p=>p.launch).launch)})+' · <span>'+F('acaba em {d}d {h}h {m}m {s}s',{d,h,m,s:ss})+'</span>';
+}
+setInterval(launchBar,1000);
+function renderPlans(){
+ launchBar();
+ const P=CFG.plans,base=P[0].price/P[0].days;
+ $('#pg').innerHTML=P.map((p,i)=>{
+  const day=priceOf(p)/p.days,prev=P[i-1],diff=prev?priceOf(p)-priceOf(prev):0;
+  const more=!prev?'':diff>0?F('Só {d} a mais que o {p}',{d:brl(diff),p:L(prev.name)}):F('Mais barato que o {p}!',{p:L(prev.name)});
+  const tag=p.best?L('Mais escolhido')+(prev?' · '+more:''):(prev?more:L('Só por hoje'));
+  const pd=p.days>1?'<s>'+brl(base*p.days)+'</s>'+F('sai {v} por dia',{v:'<b>'+brl(day)+'</b>'}):F('{v} por dia',{v:'<b>'+brl(day)+'</b>'});
+  const li=['<b>'+F('{n} de acesso',{n:dur(p.days)})+'</b>'];
+  if(p.days>1)li.push('<b>'+F('Economize {x} por dia',{x:Math.round((1-day/base)*100)+'%'})+'</b>');
+  if(prev)li.push(F('Tudo do {p}',{p:L(prev.name)}));
+  CFG.feats.forEach(([t,lv])=>{if(lv===p.tier)li.push(L(t)+(p.best&&lv===3?' <em>'+L('exclusivo')+'</em>':''))});
+  const off=CFG.feats.filter(([t,lv,show])=>show&&lv>p.tier).map(([t])=>'<li class="off">'+L(t)+'</li>');
+  return '<article class="card'+(p.best?' f':'')+'"><span class="tag'+(p.best?'':' up')+'">'+tag+'</span><h3>'+L(p.name)+'</h3>'+(priceOf(p)!==p.price?'<div class="old">'+brl(p.price)+'</div>':'')+'<div class="price">'+brl(priceOf(p))+'<small>/'+unit(p.days)+'</small></div><p class="pd">'+pd+'</p><ul>'+li.map(t=>'<li><span>'+t+'</span></li>').join('')+off.join('')+'</ul><button class="btn'+(p.best?' w':'')+'" data-plan="'+i+'">'+L(p.best?'Assinar':'Comprar')+'</button></article>'}).join('');
+ const row=(t,f)=>'<tr><td>'+L(t)+'</td>'+P.map((p,i)=>'<td'+(p.best?' class="y"':'')+'>'+f(p,i)+'</td>').join('')+'</tr>';
+ $('#ptb').innerHTML=row('Duração',p=>dur(p.days))+row('Preço',p=>brl(p.price))+row('Preço por dia',p=>brl(p.price/p.days))
+  +row('Se pagasse por dia',p=>brl(base*p.days))+row('Economia por dia',(p,i)=>i?Math.round((1-p.price/p.days/base)*100)+'%':'—')
+  +CFG.feats.map(([t,lv])=>row(t,p=>p.tier>=lv?'✓':'—')).join('')+row('PCs por key',()=>'1');
+}
+renderPlans();
+$('#pg').addEventListener('pointermove',e=>{const c=e.target.closest('.card');if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty('--mx',e.clientX-r.left+'px');c.style.setProperty('--my',e.clientY-r.top+'px')});
+
+const pay=$('#pay');
+$('#pg').addEventListener('click',e=>{
+ const b=e.target.closest('[data-plan]');if(!b)return;
+ const p=CFG.plans[+b.dataset.plan],u=CFG.checkout[p.id]||{};
+ $('#pn').textContent=L('Plano')+' '+L(p.name);$('#pp').textContent=brl(priceOf(p))+' '+L(p.per)+' · '+dur(p.days)+'. '+L('Escolha como pagar.');
+ const code=pixWith(CFG.pix,priceOf(p));
+ const q=qrcode(0,'M');q.addData(code);q.make();$('#qr').innerHTML=q.createSvgTag({cellSize:5,margin:3,scalable:true});
+ $('#cp').textContent=L('Copiar código Pix');
+ $('#cp').onclick=()=>{navigator.clipboard.writeText(code).then(()=>{$('#cp').textContent=L('Código copiado!')})};
+ const msg=encodeURIComponent(L('Paguei o plano')+' '+L(p.name)+' ('+brl(priceOf(p))+'). '+L('Meu username do REAPER:')+' ');
+ const pr=$('#cmp');pr.hidden=!CFG.proof;pr.href=CFG.proof?(CFG.proof.includes('wa.me')?CFG.proof+'?text='+msg:CFG.proof):'#';
+ pr.onclick=CFG.proof.includes('wa.me')?null:()=>{try{navigator.clipboard.writeText(decodeURIComponent(msg))}catch(e){}};
+ const cr=$('#cr');cr.hidden=!u.cripto;cr.href=u.cripto||'#';
+ $('#pnote').textContent=L('Escaneie o QR no app do seu banco. Depois envie o comprovante com o seu username do REAPER e a key chega assim que o pagamento for confirmado.')+' '+L('No Discord, entre em #comprar, clique em Comprar e mande o comprovante no ticket.');
+ pay.showModal()});
+// Pix: coloca o valor no código copia e cola e refaz o CRC (padrão do Banco Central)
+function crc16(s){let c=0xFFFF;for(const ch of new TextEncoder().encode(s)){c^=ch<<8;for(let i=0;i<8;i++)c=c&0x8000?((c<<1)^0x1021)&0xFFFF:(c<<1)&0xFFFF}return c.toString(16).toUpperCase().padStart(4,'0')}
+function pixWith(base,amount){
+ const f=[];let i=0;while(i<base.length){const id=base.substr(i,2),n=+base.substr(i+2,2);f.push([id,base.substr(i+4,n)]);i+=4+n}
+ const v=amount.toFixed(2),out=[];
+ f.forEach(([id,val])=>{if(id==='63'||id==='54')return;out.push([id,val]);if(id==='53')out.push(['54',v])});
+ const s=out.map(([id,val])=>id+String(val.length).padStart(2,'0')+val).join('')+'6304';
+ return s+crc16(s);
+}
+
+const terms=$('#terms'),tabs=$$('#terms .tabs [role=tab]'),docs=$$('#terms .doc');
+function openDoc(n){tabs.forEach((t,i)=>t.setAttribute('aria-selected',i===n));docs.forEach((d,i)=>d.hidden=i!==n);docs[n].scrollTop=0}
+tabs.forEach((t,i)=>t.onclick=()=>openDoc(i));
+$$('[data-doc]').forEach(b=>b.onclick=()=>{openDoc(+b.dataset.doc);terms.showModal()});
+[pay,terms].forEach(d=>d.addEventListener('click',e=>{if(e.target===d)d.close()}));
+
+const NAV=['Painel','Limpeza','Desempenho','Inicialização','Rede'];
+const side=a=>'<div class="side"><div class="logo"><img src="'+LOGO+'" alt=""></div>'+NAV.map((n,i)=>'<span'+(i===a?' class="on"':'')+'>'+n+'</span>').join('')+'<div class="sp"></div><span>Ajustes</span><span>Sair</span></div>';
+$('#dw').innerHTML=side(1)+'<div class="main run"><b id="c1" data-nt>0 MB</b><small>liberados</small><div class="bar"><div id="pb"></div></div><div class="rl" id="ln" data-nt></div><span class="stop">Parar</span><div class="det">Detalhes ▾</div><div id="log" aria-hidden="true" data-nt></div></div>';
+const win=$('#win'),lg=$('#log'),pb=$('#pb'),n1=$('#c1'),rln=$('#ln');
+const COL=['#ff2828','#00dcff','#be5aff','#3cff78','#4682ff','#ff5abe','#ff961e','#ffe132'];
+COL.forEach((c,i)=>{const b=document.createElement('button');b.style.background=c;b.setAttribute('aria-label',L('Cor')+' '+(i+1));b.setAttribute('aria-pressed',i===0);b.onclick=()=>{$$('.win').forEach(w=>w.style.setProperty('--ac',c));$$('#sw button').forEach(x=>x.setAttribute('aria-pressed',x===b))};$('#sw').appendChild(b)});
+// categorias da limpeza (MB)
+const CHN=[['Arquivos temporários',742],['Cache dos navegadores',2310],['Cache de apps',1290],['Cache de shaders',640],['Relatórios de erro',45]],TOT=CHN.reduce((a,c)=>a+c[1],0);
+const MBU={pt:['MB','GB'],en:['MB','GB'],ru:['МБ','ГБ']};
+const sz=n=>n>=1024?(n/1024).toLocaleString(LOC[lang],{minimumFractionDigits:1,maximumFractionDigits:1})+' '+MBU[lang][1]:Math.round(n).toLocaleString(LOC[lang])+' '+MBU[lang][0];
+let ci=0,cd=0,done=0,wait=0,go=false,started=false,tk=0;
+function add(t,c){const d=document.createElement('div');d.textContent=t;if(c)d.className=c;lg.appendChild(d);while(lg.children.length>6)lg.firstChild.remove()}
+function ui(){n1.textContent=sz(done);pb.style.width=done/TOT*100+'%';const sec=Math.floor(tk/11),k=Math.min(ci,CHN.length-1);rln.textContent=(k+1)+'/'+CHN.length+' · '+L(CHN[k][0])+' · '+String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')+' · '+sz(done/Math.max(tk/11,1))+'/s'}
+function tick(){
+ if(wait>0){wait--;if(wait===0&&ci>=CHN.length){lg.innerHTML='';ci=cd=done=tk=0;ui()}return}
+ tk++;
+ if(ci>=CHN.length){add(L('Memória liberada: 512 MB'),'ok');add(L('Concluído.'),'ok');wait=45;return}
+ if(!started){started=true;add('▶ '+(ci+1)+'/'+CHN.length+'  '+L(CHN[ci][0]));ui();return}
+ if(Math.random()<.04){add(L('Arquivo em uso, pulado'),'w');wait=4;ui();return}
+ const k=Math.min(CHN[ci][1]-cd,8+Math.random()*30);cd+=k;done+=k;ui();
+ if(cd>=CHN[ci][1]){add('✓ '+L(CHN[ci][0])+' · '+sz(CHN[ci][1]),'ok');ci++;cd=0;started=false}
+}
+ui();
+if(calm){done=TOT;ci=CHN.length-1;tk=500;ui();add(L('Concluído.'),'ok')}else{
+ setInterval(()=>{if(go)tick()},90);
+ new IntersectionObserver(e=>go=e[0].isIntersecting,{threshold:.3}).observe(win)}
+const stp=$('#steps');new IntersectionObserver((e,o)=>{if(e[0].isIntersecting){stp.classList.add('on');o.disconnect()}},{threshold:.4}).observe(stp);
+
+const ck=(on,t,s)=>'<div class="m-r"><span class="ck'+(on?' on':'')+'"></span>'+t+(s?'<small>'+s+'</small>':'')+'</div>';
+const TR=[
+['Painel','CPU, memória e disco em tempo real, e o botão Otimizar agora que faz tudo de uma vez.',
+ '<div class="m-h">Painel</div><div class="m-s">Como o seu PC está agora.</div><div class="stats sm"><div><b>34%</b><small>Processador</small></div><div><b>58%</b><small>Memória</small></div><div><b>71%</b><small>Disco C:</small></div></div><div class="kv"><span>Sistema</span>Windows 11 Pro</div><div class="kv"><span>Placa de vídeo</span>GeForce RTX 4060</div><div class="kv"><span>Ligado há</span>2d 4h 12min</div><div class="grow"></div><div class="rb">Otimizar agora</div>'],
+['Limpeza','Marque as categorias, clique em Analisar para ver quanto volta e depois em Limpar.',
+ '<div class="m-h">Limpeza</div><div class="m-s">Analise primeiro para ver quanto espaço vai voltar.</div>'+ck(1,'Arquivos temporários','742 MB')+ck(1,'Cache dos navegadores','2,3 GB')+ck(1,'Cache de apps','1,3 GB')+ck(0,'Cache de shaders','640 MB')+ck(0,'Lixeira','118 MB')+'<div class="ft"><span>4,4 GB podem ser liberados</span><span><span class="chip">Analisar</span><span class="rb sm">Limpar</span></span></div>'],
+['Desempenho','Plano de energia em um clique, RAM liberada e modo jogo com prioridade alta para o jogo aberto.',
+ '<div class="m-h">Desempenho</div><div class="sel r">Plano de energia: Alto desempenho</div><div><span class="chip on">Alto desempenho</span><span class="chip">Desempenho máximo</span><span class="chip">Liberar RAM</span></div><div class="m-s" style="margin:6px 0 10px">Modo jogo</div>'+ck(0,'jogo.exe','3,1 GB')+ck(1,'chrome.exe','1,4 GB')+ck(1,'Spotify.exe','620 MB')+'<div class="ft"><span class="chip" style="margin:0">Prioridade alta</span><span class="rb sm">Fechar marcados</span></div>'],
+['Inicialização','Veja tudo que abre com o Windows e desligue com um clique. Dá pra religar quando quiser.',
+ '<div class="m-h">Inicialização</div><div class="m-s">Desligar não desinstala nada.</div>'+ck(1,'OneDrive','Usuário')+ck(0,'Steam','Usuário')+ck(1,'Spotify','Usuário')+ck(0,'Discord','Usuário')+ck(1,'SecurityHealth','Todos os usuários')+'<div class="ft"><span>5 programas · 3 ligados</span></div>'],
+['Rede','Limpe o DNS, renove o IP, resete a rede e meça o ping para qualquer endereço.',
+ '<div class="m-h">Rede</div><div style="margin:8px 0 10px"><span class="chip">Limpar cache de DNS</span><span class="chip">Renovar IP</span><span class="chip">Resetar rede</span></div><div class="hd"><span class="sb" style="flex:1">google.com</span><span class="rb sm">Testar</span></div><div class="m-t">8.8.8.8: média 14 ms · mín 12 · máx 19 · perda 0%</div><div class="m-t">google.com: média 16 ms · mín 13 · máx 22 · perda 0%</div>']
+];
+const tt=$('#tt'),tb=$('#tb'),td=$('#tdesc');let ti=0;
+TR.forEach((t,i)=>{const b=document.createElement('button');b.setAttribute('role','tab');b.innerHTML=t[0]+'<u></u>';b.onclick=()=>show(i);tt.appendChild(b)});
+function show(i){ti=i;[...tt.children].forEach((b,j)=>{b.setAttribute('aria-selected',j===i);b.replaceChild(b.firstElementChild.cloneNode(),b.firstElementChild)});td.textContent=L(TR[i][1]);tb.innerHTML=side(i)+'<div class="mm">'+TR[i][2]+'</div>';tr(tb);if(!calm&&tb.animate)tb.animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:380,easing:'ease-out'})}
+show(0);
+tt.addEventListener('animationend',()=>show((ti+1)%TR.length));
+
+const rv=$('#rv');if(calm)rv.controls=true;else new IntersectionObserver(e=>{e[0].isIntersecting?rv.play().catch(()=>{}):rv.pause()},{threshold:.4}).observe(rv);
+
+const cv=$('#cv'),g=cv.getContext('2d'),im=new Image();
+let P=[],W=0,mx=-999,my=-999,fr=0,vis=true,dpr=Math.min(devicePixelRatio||1,2);
+function size(){W=cv.clientWidth;cv.width=cv.height=W*dpr;g.setTransform(dpr,0,0,dpr,0,0)}
+im.onload=()=>{
+ const n=160,o=document.createElement('canvas');o.width=o.height=n;const x=o.getContext('2d');x.drawImage(im,0,0,n,n);
+ const d=x.getImageData(0,0,n,n).data;size();
+ for(let j=0;j<n;j++)for(let i=0;i<n;i++){const b=d[(j*n+i)*4]/255;if(b>.2){
+  const a=Math.random()*6.283,r=W*(.6+Math.random()*.9);
+  P.push({hx:i/n,hy:j/n,b,x:W/2+Math.cos(a)*r,y:W/2+Math.sin(a)*r,vx:0,vy:0,w:Math.random()*110+10})}}
+ if(calm){fr=999;P.forEach(p=>{p.x=p.hx*W;p.y=p.hy*W})}
+ draw()};
+im.src=LOGO;
+addEventListener('resize',()=>{if(P.length)size()});
+cv.addEventListener('pointermove',e=>{const r=cv.getBoundingClientRect();mx=e.clientX-r.left;my=e.clientY-r.top;$('#hint').style.opacity=0});
+cv.addEventListener('pointerleave',()=>{mx=my=-999});
+new IntersectionObserver(e=>{const was=vis;vis=e[0].isIntersecting;if(vis&&!was)draw()}).observe(cv);
+function draw(){
+ if(!vis)return;
+ if(hold){requestAnimationFrame(draw);return}
+ fr++;g.clearRect(0,0,W,W);
+ const R=W*.14,R2=R*R,sw=(fr-170)/110,s=W/160*1.05;
+ for(const p of P){
+  const hx=p.hx*W,hy=p.hy*W;
+  if(fr>p.w){
+   p.vx+=(hx-p.x)*.045;p.vy+=(hy-p.y)*.045;
+   const dx=p.x-mx,dy=p.y-my,q=dx*dx+dy*dy;
+   if(q<R2){const f=(1-q/R2)*6,m=Math.sqrt(q)||1;p.vx+=dx/m*f;p.vy+=dy/m*f}
+   p.vx*=.86;p.vy*=.86;p.x+=p.vx;p.y+=p.vy;
+  }else{p.x+=Math.sin(fr*.03+p.hy*9)*.6;p.y+=Math.cos(fr*.03+p.hx*9)*.6}
+  const hot=Math.abs(p.hx-sw)<.025;
+  g.globalAlpha=hot?1:.25+p.b*.75;
+  g.fillStyle=hot?'#ff3030':'#efeeec';
+  g.fillRect(p.x,p.y,s,s);
+ }
+ g.globalAlpha=1;
+ if(!calm||fr<2)requestAnimationFrame(draw);
+}
+function aria(){$('nav').setAttribute('aria-label',L('Principal'));$('#cv').setAttribute('aria-label',L('Logo do REAPER formada por pontos'));$('#win').setAttribute('aria-label',L('Demonstração animada do app'));$('#terms .x').setAttribute('aria-label',L('Fechar'));$$('#sw button').forEach((b,i)=>b.setAttribute('aria-label',L('Cor')+' '+(i+1)))}
+function setLang(l,first){
+ lang=l;try{localStorage.setItem('reaper_lang',l)}catch(e){}
+ document.documentElement.lang=LOC[l];
+ tr(document.body);bigs();aria();renderPlans();$('#lgb').textContent=l.toUpperCase();
+ if(!first)setH1(false);
+ lg.innerHTML='';ui();show(ti);
+ const v=(CFG.videos||{})[l];$('#real').hidden=!v;
+ if(v&&rv.getAttribute('src')!==v){rv.src=v;rv.poster=v.replace('.mp4','.jpg');rv.load()}
+}
+const gate=$('#gate'),root=document.documentElement;
+function openGate(){root.classList.remove('hasl');void gate.offsetWidth;gate.classList.remove('out')}
+$$('#gate [data-l]').forEach(b=>b.onclick=()=>{const first=hold;setLang(b.dataset.l,first);gate.classList.add('out');setTimeout(()=>root.classList.add('hasl'),750);if(first){hold=false;setH1(true)}});
+$('#lgb').onclick=openGate;
+const nl=(navigator.language||'en').slice(0,2),rc=['pt','en','ru'].includes(nl)?nl:'en';
+$$('#gate [data-l]').forEach(b=>{if(b.dataset.l===rc)b.classList.add('rec')});
+let sv=null;try{sv=localStorage.getItem('reaper_lang')}catch(e){}
+if(sv&&LOC[sv]){setLang(sv,true);hold=false;setH1(true)}else{$('#real').hidden=true;if(calm)setH1(false)}
+</script>
+</body>
+</html>
